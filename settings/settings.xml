@@ -1,0 +1,8 @@
+<settings>
+<player name="Jurek" graphics="player" normalspeed="4" runspeed="8" playerx="0" playery="0"/>
+<bup x="3" y="0" w="24" h="32"/>
+<bdown x="3" y="0" w="24" h="32"/>
+<bleft x="3" y="0" w="24" h="32"/>
+<bright x="3" y="0" w="24" h="32"/>
+<initmap name="map1"/>
+</settings>

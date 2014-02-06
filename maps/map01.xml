@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+  <dim width="3" height="4"/>
+  <tileset name="tileset1"/>
+  <layer1>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+    <t n="1"/>
+  </layer1>
+  <layer2>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="49"/>
+    <t n="0"/>
+    <t n="49"/>
+    <t n="49"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="49"/>
+    <t n="0"/>
+  </layer2>
+  <layer3>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+  </layer3>
+  <layer4>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="137"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="145"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+  </layer4>
+  <jumps>
+    <j map="map2" jx="2" jy="1" destx="1" desty="1"/>
+  </jumps>
+  <npc>
+    <!-- Ścieżki zapisywane są w formacie x1;y1;x2;y2;itd -->
+    <n name="Janusz1" img="girl.png" x="1" y="2" mode="0" path="1;2;3;4;5;6"/>
+    <n name="Janusz2" img="1.png" x="0" y="0" mode="0" path="1;2;3;4;5;6"/>
+    <n name="Janusz3" img="2.png" x="0" y="0" mode="0" path="1;2;3;4;5;6"/>
+    <n name="Janusz4" img="3.png" x="0" y="0" mode="0" path="1;2;3;4;5;6"/>
+  </npc>
+</map>

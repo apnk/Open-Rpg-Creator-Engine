@@ -1,0 +1,31 @@
+<map>
+  <dim width="2" height="2"/>
+  <tileset name="tileset"/>
+  <layer1>
+    <t n="1"/>
+    <t n="2"/>
+    <t n="3"/>
+    <t n="4"/>
+  </layer1>
+  <layer2>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="56"/>
+    <t n="34"/>
+  </layer2>
+  <layer3>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="15"/>
+    <t n="34"/>
+  </layer3>
+  <layer4>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+    <t n="0"/>
+  </layer4>
+  <jumps>
+    <j map="map1" jx="0" jy="0" destx="1" desty="1"/>
+  </jumps>
+</map>
