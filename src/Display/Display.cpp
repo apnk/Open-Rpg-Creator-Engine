@@ -1,6 +1,6 @@
 #include "Display.hpp"
 #include <SDL/SDL.h>
-#include "Utils/draw.hpp"
+#include "draw.hpp"
 #include <SDL/SDL_ttf.h>
 
 Display* Display::INSTANCE;

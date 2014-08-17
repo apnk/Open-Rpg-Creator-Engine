@@ -1,7 +1,7 @@
 #include <SDL/SDL.h>
 #include <string>
 #include "CharacterAnimation.hpp"
-#include "../Utils/draw.hpp"
+#include "../Display/draw.hpp"
 #include "../Utils/common.hpp"
 
 SDL_Surface* CharacterAnimation::getFrame(Direction dir){

@@ -1,9 +1,9 @@
 #include <cstdlib>
 #include "Game.hpp"
-#include "Display.hpp"
+#include "Display/Display.hpp"
 #include <stdlib.h>
 #include <SDL/SDL_ttf.h>
-#include "Utils/draw.hpp"
+#include "Display/draw.hpp"
 #include "Utils/Timer.hpp"
 #include "Utils/common.hpp"
 #include "Character/Player.hpp"
@@ -14,7 +14,6 @@ const std::string Game::SETTINGS_FILE = "settings/settings.xml";
 Game* Game::INSTANCE;
 
 Game::Game() {
-//	initVideo();
 	map = 0;
 	player = 0;
 	isRunning = true;

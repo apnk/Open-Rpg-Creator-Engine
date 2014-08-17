@@ -6,7 +6,7 @@
 #include "Utils/Timer.hpp"
 #include "Character/Player.hpp"
 #include "Parser/XMLParser.hpp"
-#include "Display.hpp"
+#include "Display/Display.hpp"
 #include <SDL/SDL.h>
 
 class Map;
@@ -23,7 +23,7 @@ private:
     Timer timer;
     Player *player;
     SDL_Event event;
-    Uint8 *keystates;
+    Uint8 *keystates = 0;
     Display* display;
     SDL_Surface* screen;
     XMLParser* xmlParser;

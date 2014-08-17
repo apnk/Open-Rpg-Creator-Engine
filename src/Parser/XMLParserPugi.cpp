@@ -4,7 +4,7 @@
 #include "XMLParserPugi.hpp"
 #include "../Utils/common.hpp"
 #include "../Utils/other.hpp"
-#include "../Utils/draw.hpp"
+#include "../Display/draw.hpp"
 #include "../Character/NpcNormal.hpp"
 
 class Map;

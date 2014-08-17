@@ -1,7 +1,7 @@
 #ifndef _DISPLAY_HPP_
 #define _DISPLAY_HPP_
 
-#include "Map/Map.hpp"
+#include "../Map/Map.hpp"
 
 class Map;
 
