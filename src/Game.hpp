@@ -6,10 +6,12 @@
 #include "Utils/Timer.hpp"
 #include "Character/Player.hpp"
 #include "Parser/XMLParser.hpp"
+#include "Display.hpp"
 #include <SDL/SDL.h>
 
 class Map;
 class XMLParser;
+class Display;
 
 class Game {
 private:
@@ -22,17 +24,15 @@ private:
     Player *player;
     SDL_Event event;
     Uint8 *keystates;
+    Display* display;
     SDL_Surface* screen;
     XMLParser* xmlParser;
     SDL_Rect screenBorder;
     
     Game();
-    
     bool isSet();
     bool isRunning;
-    void initVideo();
     void handleTimer();
-    void renderFrame();
     void handleEvents();
     void handleArrows();
     void handleKeyboard();

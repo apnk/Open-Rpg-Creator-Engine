@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include "Game.hpp"
+#include "Display.hpp"
 #include <stdlib.h>
 #include <SDL/SDL_ttf.h>
 #include "Utils/draw.hpp"
@@ -13,31 +14,24 @@ const std::string Game::SETTINGS_FILE = "settings/settings.xml";
 Game* Game::INSTANCE;
 
 Game::Game() {
-	initVideo();
+//	initVideo();
 	map = 0;
 	player = 0;
 	isRunning = true;
 	xmlParser = ResourceParser::getParser();
-}
-
-void Game::initVideo() {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP,
-	SDL_SWSURFACE);
-	SDL_WM_SetCaption(GAME_TITLE.c_str(), 0);
-	TTF_Init();
-	screenBorder.w = SCREEN_WIDTH;
-	screenBorder.h = SCREEN_HEIGHT;
+	display = Display::getInstance();
 }
 
 void Game::run() {
 	GameData* gameData = xmlParser->parseGame(Game::SETTINGS_FILE);
 	map = new Map(gameData->getMap());
 	player = gameData->getPlayer();
+	display->setMap(map);
 	while (isRunning) {
 		timer.start();
 		handleKeyboard();
-		renderFrame();
+		//renderFrame();
+		display->renderFrame(player);
 		handleTimer();
 	}
 }
@@ -46,19 +40,6 @@ void Game::handleTimer() {
 	if (timer.get_ticks() < 1000 / FRAMES_PER_SECONDS) {
 		SDL_Delay((1000 / FRAMES_PER_SECONDS) - timer.get_ticks());
 	}
-}
-
-void Game::renderFrame() {
-	screenBorder.x = player->getX() - SCREEN_WIDTH / 2;
-	screenBorder.y = player->getY() - SCREEN_HEIGHT / 2;
-	SDL_FillRect(screen, 0, 0x000000);
-	drawImage(0, 0, map->getLowerSurface(), screen, &screenBorder);
-	drawImage(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, player->getImage(), screen,
-			0);
-	drawNpcs(map->getNpcContainer(), screen, player->getX(), player->getY(),
-			&screenBorder);
-	drawImage(0, 0, map->getHigherSurface(), screen, &screenBorder);
-	SDL_Flip(screen);
 }
 
 void Game::setPlayerInStandingPosition() {
