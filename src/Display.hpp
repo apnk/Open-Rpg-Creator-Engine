@@ -17,13 +17,13 @@ private:
 
 	Display();
 
+	void drawNpcs(ObjectsContainer<Npc*>* npcs, SDL_Surface* destination, int playerX, int playerY, SDL_Rect* clip);
 public:
 	static Display* getInstance();
 	void setMap(Map* map);
 	virtual ~Display();
 	void setGameTitle(std::string gameTitle);
 	void renderFrame(Player* player);
-	//void drawNpcs(ObjectsContainer<Npc*>* npcs, SDL_Surface* destination, int playerX, int playerY, SDL_Rect* clip);
 };
 
 

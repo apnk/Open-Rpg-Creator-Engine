@@ -41,6 +41,15 @@ void Display::renderFrame(Player* player){
 	SDL_Flip(screen);
 }
 
+void Display::drawNpcs(ObjectsContainer<Npc*>* npcs, SDL_Surface* destination, int playerX, int playerY, SDL_Rect* clip = 0) {
+    std::vector<Npc*>* npcVector = npcs->getVectorOfObjects();
+    for (unsigned int i = 0; i < npcVector->size(); i++) {
+        int npcX = npcVector->at(i)->getX();
+        int npcY = npcVector->at(i)->getY();
+        drawImage(calculateNpcX(npcX, playerX), calculateNpcY(npcY, playerY), npcVector->at(i)->getImage(), destination, 0);
+    }
+}
+
 Display* Display::getInstance(){
 	if(INSTANCE == 0){
 		INSTANCE = new Display();

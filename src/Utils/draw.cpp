@@ -1,5 +1,4 @@
 #include "draw.hpp"
-#include <iostream>
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 #include <SDL/SDL_image.h>
@@ -13,15 +12,6 @@ void drawImage(int x, int y, SDL_Surface* image, SDL_Surface* destination, SDL_R
     SDL_BlitSurface(image, clip, destination, &offset);
 }
 
-void drawNpcs(ObjectsContainer<Npc*>* npcs, SDL_Surface* destination, int playerX, int playerY, SDL_Rect* clip = 0) {
-    std::vector<Npc*>* npcVector = npcs->getVectorOfObjects();
-    for (unsigned int i = 0; i < npcVector->size(); i++) {
-        int npcX = npcVector->at(i)->getX();
-        int npcY = npcVector->at(i)->getY();
-        drawImage(calculateNpcX(npcX, playerX), calculateNpcY(npcY, playerY), npcVector->at(i)->getImage(), destination, 0);
-    }
-}
-
 SDL_Surface* loadImage(std::string filename) {
     SDL_Surface* loadedImage = 0;
     SDL_Surface* optimizedImage = 0;
@@ -29,7 +19,7 @@ SDL_Surface* loadImage(std::string filename) {
     if (loadedImage != 0) {
         optimizedImage = SDL_DisplayFormat(loadedImage);
         if (optimizedImage != 0) {
-            //KOLOR NIEWIDOCZNY R-236, G-0, B-140
+            //Invisible color R-236, G-0, B-140
             Uint32 colorkey = SDL_MapRGB(optimizedImage->format, 255, 255, 255);
             SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, colorkey);
         }
